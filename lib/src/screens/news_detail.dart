@@ -47,7 +47,8 @@ class NewsDetail extends StatelessWidget {
         final commentList = item.kids.map((kidId) {
             return Comment(
                 itemId: kidId,
-                itemMap: itemMap
+                itemMap: itemMap,
+                depth: 0,
             );
         }).toList();
         children.addAll(commentList);
