@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import '../models/item_model.dart';
 
 class Comment extends StatelessWidget {
@@ -20,7 +21,7 @@ class Comment extends StatelessWidget {
                 final item = snapshot.data;
                 final children = <Widget>[
                     ListTile(
-                        title: buildText(item),
+                        title: Html(data: item.text),
                         subtitle: item.by == '' ? Text('Deleted') : Text(item.by),
                         contentPadding: EdgeInsets.only(
                             right: 16.0,
@@ -42,10 +43,6 @@ class Comment extends StatelessWidget {
                 );
             },
         );
-    }
-
-    Widget buildText(ItemModel item) {
-
     }
 
 }
